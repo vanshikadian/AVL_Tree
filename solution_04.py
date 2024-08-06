@@ -1,9 +1,4 @@
-"""
-Project 5
-CSE 331 SS24
-Authors: Hank Murdock, Joel Nataren, Aaron Elkin, Divyalakshmi Varadha, Ethan Cook
-starter.py
-"""
+
 import math
 from typing import TypeVar, Generator, List, Tuple, Optional
 from collections import deque
@@ -11,7 +6,6 @@ import json
 from queue import SimpleQueue
 import heapq
 
-# for more information on typehinting, check out https://docs.python.org/3/library/typing.html
 T = TypeVar("T")  # represents generic type
 # represents a Node object (forward-declare to use in Node __init__)
 Node = TypeVar("Node")
@@ -24,7 +18,6 @@ class Node:
     Implementation of an BST and AVL tree node.
     Do not modify.
     """
-    # preallocate storage: see https://stackoverflow.com/questions/472000/usage-of-slots
     __slots__ = ["value", "parent", "left", "right", "height"]
 
     def __init__(self, value: T, parent: Node = None,
@@ -96,10 +89,7 @@ class BinarySearchTree:
         """
         return repr(self)
 
-    ########################################
-    # Implement functions below this line. #
-    ########################################
-
+    
     def height(self, root: Node) -> int:
         """
         Calculates the height of a subtree in the AVL tree
@@ -243,9 +233,6 @@ class AVLTree:
         """
         return repr(self)
 
-    ########################################
-    # Implement functions below this line. #
-    ########################################
 
     def height(self, root: Node) -> int:
         """
@@ -635,10 +622,6 @@ def build_tree_with_stocks(stocks_list: List[dict[str: str]]) -> AVLTree:
     return avl
 
 
-####################################################################################################
-# Implement functions below this line. #
-####################################################################################################
-
 def recommend_stock(stock_tree: AVLTree, user: User, action: str) -> Optional[Stock]:
     """
     Recommends a stock to buy or sell from an AVL tree based on user-defined criteria.
@@ -684,9 +667,6 @@ def prune(stock_tree: AVLTree, threshold: float = 0.05) -> None:
     for node in nodes_to_prune:
         stock_tree.remove(stock_tree.origin, node.value)
 
-####################################################################################################
-####################### EXTRA CREDIT ##############################################################
-####################################################################################################
 from collections import Counter
 
 
@@ -845,9 +825,6 @@ class HuffmanTree:
 
         return decompressed
 
-    ########################################################################################
-    # Implement functions below this line. #
-    ########################################################################################
 
     def build(self, chars: str) -> None:
         """
